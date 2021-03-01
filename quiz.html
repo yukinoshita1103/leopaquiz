@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charaset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>レオパモルフ検定</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="stylesheet.css"
+      media="screen"
+    />
+  </head>
+  <body>
+    <!-- 問題 -->
+    <div>
+      Q<span id="question-number"></span>：<span id="question-molf-name"></span
+      >はどっち？
+    </div>
+    <!-- 画像を正解／不正解1枚ずつ -->
+    <div class="flex">
+      <div id="left" onclick="buttonClickLeft(this.id)">aaa</div>
+      <div id="right" onclick="buttonClickRight(this.id)">aaa</div>
+    </div>
+    <!-- 正誤判定 -->
+    <div id="marubatsu"></div>
+    <!-- タイマー -->
+    <div class="timer-wrap">
+      <span>
+        残り
+        <span id="timer-text"></span>
+        秒
+      </span>
+    </div>
+    <script type="text/javascript" src="./js/Timer.js"></script>
+    <script type="text/javascript" src="./js/Question.js"></script>
+    <script type="text/javascript" src="./js/CorrectCheck.js"></script>
+    <script type="text/javascript" src="./js/Result.js"></script>
+  </body>
+</html>

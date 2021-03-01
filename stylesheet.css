@@ -1,0 +1,132 @@
+/* quiz.html */
+
+/* 選択肢の表示 */
+
+.flex {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex::before {
+  padding-top: 100%;
+}
+.flex div {
+  width: 50%;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* 正誤判定の表示 */
+
+#marubatsu {
+  text-align: center;
+}
+
+/* いろいろ */
+
+.start-game-button {
+  background-color: #ee4056;
+  color: white;
+  font-size: 16px;
+  border-style: none;
+  padding: 10px;
+  text-align: center;
+}
+
+/* .balloon {
+  padding: 0.5px;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  background: #ffcc75;
+  border-radius: 50%;
+  box-sizing: border-box; 
+} */
+
+.border {
+  border: 5px #ff0000 solid;
+}
+
+.balloon {
+  position: relative;
+  width: 500px;
+  height: 80px;
+  background: #fff059;
+  padding: 10px;
+  text-align: center;
+  color: #0a0a0a;
+  font-size: 30px;
+  font-weight: bold;
+  border-top-right-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topright: 10px;
+  border-bottom-right-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  border-bottom-left-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomleft: 10px;
+}
+.balloon:after {
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  pointer-events: none;
+  position: absolute;
+  border-color: rgba(255, 240, 89, 0);
+  border-top-width: 10px;
+  border-bottom-width: 10px;
+  border-left-width: 10px;
+  border-right-width: 10px;
+  margin-top: -10px;
+  border-right-color: #fff059;
+  right: 100%;
+  top: 50%;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.wrapper {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.clear {
+  clear: both; /* 回り込みを解除する */
+}
+
+.box {
+  justify-content: center;
+}
+
+.timer-wrap {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.timer-text {
+  font-size: 30px;
+  color: #ee4056;
+  font-weight: bold;
+}
