@@ -1,15 +1,15 @@
 // 全モルフを格納
 let molfArray = [
-  "ハイイエロー",
-  "エメリン",
-  "レモンフロスト",
-  "バンディット",
-  "ギャラクシー",
-  "ブラックナイト",
-  “スーパーマックスノー“,
-  “トレンパーアルビノ“,
-  “ハイポタンジェリン“,
-  “ブレイジングブリザード“
+  { num: "001", name: "ハイイエロー" },
+  { num: "002", name: "エメリン" },
+  { num: "003", name: "トレンパーアルビノ" },
+  { num: "004", name: "ハイポタンジェリン" },
+  { num: "005", name: "ブレイジングブリザード" },
+  { num: "006", name: "レモンフロスト" },
+  { num: "007", name: "バンディット" },
+  { num: "008", name: "ギャラクシー" },
+  { num: "009", name: "ブラックナイト" },
+  { num: "010", name: "スーパーマックスノー" },
 ];
 
 // 問題番号をインクリメントする関数を作る。
@@ -21,20 +21,21 @@ function increment() {
 // 問題文をランダムに作成する関数を作る。
 function molfQuestion() {
   imageNumber = Math.floor(Math.random() * molfArray.length);
-  molfQuestionName = molfArray[imageNumber];
+  molfQuestionName = molfArray[imageNumber].name;
+  molfQuestionNum = molfArray[imageNumber].num;
   questionElement.innerText = molfQuestionName;
 }
 
 // 選択肢がランダムで2枚表示され、正誤判定する関数を作る。
 function molfAnswer() {
   // 正解のモルフを用意する。
-  imageMolf = '<img src="image/' + molfQuestionName + '.jpg">';
+  imageMolf = '<img src="image/' + molfQuestionNum + '.jpg">';
   // 不正解のモルフを用意する。
   do {
     i = Math.floor(Math.random() * molfArray.length);
   } while (i === imageNumber);
   notImageNumber = i;
-  notImageMolf = '<img src="image/' + molfArray[notImageNumber] + '.jpg">';
+  notImageMolf = '<img src="image/' + molfArray[notImageNumber].num + '.jpg">';
   // 正解と不正解を格納した配列を用意する。
   optionArray = [];
   optionArray[0] = imageMolf;
@@ -66,14 +67,15 @@ questionNumberElement.innerText = questionNumber;
 // 問題文をランダムに作成。
 
 let imageNumber = Math.floor(Math.random() * molfArray.length);
-let molfQuestionName = molfArray[imageNumber];
+let molfQuestionName = molfArray[imageNumber].name;
+let molfQuestionNum = molfArray[imageNumber].num;
 let questionElement = document.getElementById("question-molf-name");
 questionElement.innerText = molfQuestionName;
 
 // 正解のモルフを用意する。
 
 let imageElement = document.getElementById("left");
-let imageMolf = '<img src="image/' + molfQuestionName + '.jpg">';
+let imageMolf = '<img src="image/' + molfQuestionNum + '.jpg">';
 // imageElement.innerHTML = imageMolf;
 
 // 不正解のモルフを用意する。
@@ -83,7 +85,8 @@ do {
 } while (i === imageNumber);
 let notImageNumber = i;
 let notImageElement = document.getElementById("right");
-let notImageMolf = '<img src="image/' + molfArray[notImageNumber] + '.jpg">';
+let notImageMolf =
+  '<img src="image/' + molfArray[notImageNumber].num + '.jpg">';
 // notImageElement.innerHTML = notImageMolf;
 
 // 正解と不正解を格納した配列を用意する。
@@ -117,7 +120,7 @@ let optionB = optionArray[b]
 // 左の画像をクリックして、正誤ごとに処理を行う。
 
 function buttonClickLeft() {
-  if (optionA === molfQuestionName) {
+  if (optionA === molfQuestionNum) {
     console.log("正解");
     // 正解と表示される。
     let marubatsuElement = document.getElementById("marubatsu");
@@ -157,7 +160,7 @@ function buttonClickLeft() {
 // 右をクリックして、正解の場合、正解とログする。
 
 function buttonClickRight() {
-  if (optionB === molfQuestionName) {
+  if (optionB === molfQuestionNum) {
     console.log("正解");
     // 正解と表示される。
     let marubatsuElement = document.getElementById("marubatsu");
