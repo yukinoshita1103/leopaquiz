@@ -1,4 +1,4 @@
-let originalTime = ;
+let originalTime = 5;
 // アロー関数で記載。
 let countDown = () => {
   originalTime--;
