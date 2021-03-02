@@ -138,7 +138,7 @@ function buttonClickLeft() {
     setTimeout(molfAnswer, 300);
     //  正解表示のN秒後、タイマーがリセットされる。
     setTimeout(() => {
-      originalTime = 999;
+      originalTime = 5;
       timerElement.innerText = originalTime;
     }, 300);
   } else {
@@ -178,7 +178,7 @@ function buttonClickRight() {
     setTimeout(molfAnswer, 300);
     //  正解表示のN秒後、タイマーがリセットされる。
     setTimeout(() => {
-      originalTime = 999;
+      originalTime = 5;
       timerElement.innerText = originalTime;
     }, 300);
   } else {
