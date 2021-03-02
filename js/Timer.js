@@ -1,4 +1,4 @@
-let originalTime = 999;
+let originalTime = ;
 // アロー関数で記載。
 let countDown = () => {
   originalTime--;
